@@ -35,7 +35,7 @@ function sendAlertWithLocation() {
       const message = `🚨 Emergency Alert!\nLocation: ${mapsLink}\nImmediate help needed!`;
 
       // Option: WhatsApp
-      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`);
+      window.open(`https://wa.me/917349169426?text=${encodeURIComponent(message)}`);
 
       // Option: Email fallback
       // window.location.href = `mailto:emergency@hospital.com?subject=Emergency Alert&body=${encodeURIComponent(message)}`;
