@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nearby Hospitals</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f0f8ff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077b6;
+    }
+
+    #map {
+      margin-top: 20px;
+      width: 100%;
+      height: 500px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn {
+      display: block;
+      margin: 30px auto 0;
+      background: #6a4c93;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      width: fit-content;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #563d7c;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🏥 Nearby Hospitals</h1>
+    <div id="map">Loading map...</div>
+    <a href="index.html" class="back-btn">← Back to Emergency Detection</a>
+  </div>
+
+  <script>
+    function initMap(lat, lng) {
+      const mapFrame = document.getElementById("map");
+      const query = `https://www.google.com/maps/embed/v1/search?key=YOUR_API_KEY&q=hospitals+near+${lat},${lng}`;
+      mapFrame.innerHTML = `<iframe width="100%" height="500" style="border:0;border-radius:16px;" loading="lazy"
+        allowfullscreen src="${query}"></iframe>`;
+    }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const { latitude, longitude } = position.coords;
+          initMap(latitude, longitude);
+        }, () => {
+          document.getElementById("map").innerText = "⚠️ Could not access location.";
+        });
+      } else {
+        document.getElementById("map").innerText = "⚠️ Geolocation not supported.";
+      }
+    }
+
+    getLocation();
+  </script>
+</body>
+</html>
