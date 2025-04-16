@@ -38,3 +38,20 @@ button:hover {
   color: #2b9348;
 }
 
+.first-aid-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #0077b6;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+.first-aid-btn:hover {
+  background: #023e8a;
+  transform: scale(1.05);
+}
+
