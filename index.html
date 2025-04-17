@@ -3,9 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <title>AI-Powered Emergency Response</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://www.idfy.com/wp-content/uploads/2021/05/Healthcare-BGV-scaled.jpg');
+      background-size: contain;
+      background-color: rgba(0, 0, 0, 0.7);
+      background-blend-mode: darken;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      display: inline-block;
+      animation: slideIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+
+    button, .first-aid-btn {
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #ff4d4d, #ff1a8c);
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(255, 0, 76, 0.4);
+    }
+
+    button:hover, .first-aid-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(255, 0, 76, 0.6);
+      background: linear-gradient(135deg, #ff1a8c, #ff4d4d);
+    }
+
+    #status {
+      font-style: italic;
+      color: #ffd6d6;
+      margin-top: 20px;
+      animation: fadeIn 3s ease;
+    }
+
+    /* Animations */
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        text-shadow: 0 0 5px #ff4d4d;
+      }
+      50% {
+        text-shadow: 0 0 20px #ff1a8c;
+      }
+      100% {
+        text-shadow: 0 0 5px #ff4d4d;
+      }
+    }
+  </style>
 </head>
-<body style="background-image: url('https://www.idfy.com/wp-content/uploads/2021/05/Healthcare-BGV-scaled.jpg'); background-size:contain;">
+<body>
   <div class="container">
     <h1>🚨 AI Emergency Response System</h1>
     <p>Click the button and say <strong>"help"</strong> or <strong>"emergency"</strong> to trigger an alert.</p>
