@@ -50,7 +50,7 @@ function sendAlertWithLocation() {
                       `Immediate help needed!`;
 
       // Send via WhatsApp
-      window.open(`https://wa.me/917349169426?text=${encodeURIComponent(message)}`);
+      window.open(`https://wa.me/916362354491?text=${encodeURIComponent(message)}`);
     }, error => {
       statusEl.innerText = "⚠️ Unable to get location.";
     });
